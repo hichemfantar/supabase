@@ -2569,4 +2569,29 @@ module.exports = [
     destination:
       '/docs/guides/auth/phone-login?showSmsProvider=Textlocal%2520%28Community%2520Supported%29',
   },
+  {
+    permanent: true,
+    source: '/docs/guides/cli',
+    destination: '/docs/guides/develop-deploy/cli',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/cli/managing-environments',
+    destination: '/docs/guides/develop-deploy/environments',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/platform/maturity-model',
+    destination: '/docs/guides/develop-deploy/maturity-model',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/platform/shared-responsibility-model',
+    destination: '/docs/guides/develop-deploy/shared-responsibility-model',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/platform/going-into-prod',
+    destination: '/docs/guides/develop-deploy/going-into-prod',
+  },
 ]

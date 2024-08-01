@@ -1,0 +1,31 @@
+---
+title: 'Environments'
+subtitle: 'Use Supabase in all environments where you develop and deploy your application'
+---
+
+Most production applications are developed and deployed in several environments, from development to staging to production. Each environment has different safety and robustness guarantees.
+
+You can use Supabase in all environments where you develop your application. Supabase has several tools for managing the development lifecycle, including the [Supabase CLI](/docs/guides/develop-deploy/cli), [branching](/docs/guides/develop-deploy/branching), and more.
+
+<Image
+  alt="Diagram showing a possible environment setup for Supabase development. There are 3 branches and 3 corresponding databases: feature branch and local database, develop branch and staging database, and main branch and production database."
+  src={{
+    light: '/docs/img/local-dev-environment--light.svg',
+    dark: '/docs/img/local-dev-environment.svg',
+  }}
+  zoomable
+/>
+
+## Development stages
+
+Most applications have at least three different development and deployment envrionments:
+
+1. Local development. This might run on the developer's machine, or in an ephemeral cloud container, if using a cloud development environment such as GitHub Codespaces or GitPod.
+1. Staging or preview. There might be several of these environments, which might be persistent or ephemeral (lasting for the lifetime of a feature branch).
+1. Production. This is the environment end users interact with.
+
+Each of these stages should be using a different Supabase instance. Supabase provides:
+
+1. The Supabase CLI, to run a local Supabase stack for development.
+1. Branching, to maintain multiple persistent or ephemeral preview environments.
+1. Continous integration abilities, to safely and securely sync your changes to production once they are approved.

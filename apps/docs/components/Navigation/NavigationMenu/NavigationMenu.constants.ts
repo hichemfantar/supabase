@@ -1,4 +1,3 @@
-import { IS_DEV } from '~/lib/constants'
 import type { GlobalMenuItems, NavMenuConstant, References } from '../Navigation.types'
 
 export const GLOBAL_MENU_ITEMS: GlobalMenuItems = [
@@ -61,16 +60,10 @@ export const GLOBAL_MENU_ITEMS: GlobalMenuItems = [
       menuItems: [
         [
           {
-            label: 'Local Dev / CLI',
+            label: 'Develop & Deploy',
             icon: 'dev-cli',
-            href: '/guides/cli',
+            href: '/guides/develop-deploy',
             level: 'reference_javascript',
-          },
-          {
-            label: 'Platform',
-            icon: 'platform',
-            href: '/guides/platform',
-            level: 'platform',
           },
           {
             label: 'Self-Hosting',
@@ -84,6 +77,27 @@ export const GLOBAL_MENU_ITEMS: GlobalMenuItems = [
             hasLightIcon: true,
             href: 'https://supabase.com/partners/integrations',
             level: 'integrations',
+          },
+        ],
+      ],
+    },
+  ],
+  [
+    {
+      label: 'Manage',
+      menuItems: [
+        [
+          {
+            label: 'Platform Management',
+            icon: 'platform',
+            href: '/guides/platform', // TODO: consider changing this?
+            level: 'platform',
+          },
+          {
+            label: 'Monitoring & Troubleshooting',
+            icon: 'troubleshooting',
+            href: '/guides/monitoring-troubleshooting',
+            level: 'monitoring_troubleshooting',
           },
         ],
       ],
@@ -1652,29 +1666,29 @@ export const ai = {
   ],
 }
 
-export const supabase_cli: NavMenuConstant = {
+export const develop_deploy: NavMenuConstant = {
   icon: 'dev-cli',
-  title: 'Local Dev / CLI',
-  url: '/guides/cli',
+  title: 'Develop & Deploy',
+  url: '/guides/develop-deploy',
   items: [
-    { name: 'Overview', url: '/guides/cli' },
+    { name: 'Overview', url: '/guides/develop-deploy' },
     {
-      name: 'Using the CLI',
+      name: 'Environments',
+      url: '/guides/develop-deploy/environments',
+    },
+    {
+      name: 'CLI',
       url: undefined,
       items: [
-        { name: 'Getting started', url: '/guides/cli/getting-started' },
+        { name: 'Getting started with the CLI', url: '/guides/cli/getting-started' },
         { name: 'CLI Configuration', url: '/guides/cli/config' },
       ],
     },
     {
-      name: 'Developing with Supabase',
+      name: 'Local Development',
       url: undefined,
       items: [
         { name: 'Local Development', url: '/guides/cli/local-development' },
-        {
-          name: 'Managing environments',
-          url: '/guides/cli/managing-environments',
-        },
         {
           name: 'Managing config and secrets',
           url: '/guides/cli/managing-config',
@@ -1694,7 +1708,45 @@ export const supabase_cli: NavMenuConstant = {
       ],
     },
     {
-      name: 'GitHub Action',
+      name: 'Deployment integrations',
+      url: undefined,
+      items: [
+        {
+          name: 'GitHub integration',
+          url: '/guides/develop-deploy/github-integration',
+        },
+      ],
+    },
+    {
+      name: 'Branching',
+      url: undefined,
+      items: [
+        {
+          name: 'Branching overview',
+          url: '/guides/develop-deploy/branching',
+        },
+      ],
+    },
+    {
+      name: 'Production readiness',
+      url: undefined,
+      items: [
+        {
+          name: 'Maturity model',
+          url: '/guides/develop-deploy/maturity-model',
+        },
+        {
+          name: 'Shared responsibility model',
+          url: '/guides/develop-deploy/shared-responsibility-model',
+        },
+        {
+          name: 'Production checklist',
+          url: '/guides/develop-deploy/going-into-prod',
+        },
+      ],
+    },
+    {
+      name: 'Continuous Integration',
       url: undefined,
       items: [
         {

@@ -127,6 +127,8 @@ export const getMenuId = (pathname: string | null) => {
       return MenuId.GettingStarted
     case pathname.startsWith('graphql'):
       return MenuId.Graphql
+    case pathname.startsWith('develop-deploy'):
+      return MenuId.DevelopDeploy
     case pathname.startsWith('platform'):
       return MenuId.Platform
     case pathname.startsWith('realtime'):

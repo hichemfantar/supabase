@@ -33,6 +33,7 @@ import { RealtimeLimitsEstimator } from '~/components/RealtimeLimitsEstimator'
 import { RegionsList } from '~/components/RegionsList'
 import { SharedData } from '~/components/SharedData'
 import StepHikeCompact from '~/components/StepHikeCompact'
+import { MaturityModel, MaturityModelLevel } from '~/features/widgets/maturity-model'
 import { Accordion, AccordionItem } from '~/features/ui/Accordion'
 import * as CH from '~/features/ui/CodeHike'
 import { Tabs, TabPanel } from '~/features/ui/Tabs'
@@ -63,6 +64,8 @@ const components = {
   JwtGenerator,
   KotlinProjectSetup,
   Link,
+  MaturityModel,
+  MaturityModelLevel,
   MigrationWarnings,
   NavData,
   OAuthPkceFlow,

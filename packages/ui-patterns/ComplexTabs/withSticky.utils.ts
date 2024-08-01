@@ -1,12 +1,19 @@
 import { useCallback, useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
 
+interface IntersectionObserverOptions {
+  rootMargin?: string
+  threshold?: number
+}
+
 const useSticky = <Element extends HTMLElement>({
   enabled = true,
   style = {} as CSSStyleDeclaration,
+  options: { rootMargin = '0px 0px 0px 0px', threshold = 0.1 } = {} as IntersectionObserverOptions,
 }: {
   enabled?: boolean
-  style?: CSSStyleDeclaration
+  style?: Partial<CSSStyleDeclaration>
+  options?: IntersectionObserverOptions
 } = {}) => {
   const stickyRef = useRef<Element>(null)
 
@@ -38,9 +45,10 @@ const useSticky = <Element extends HTMLElement>({
   )
 
   const { ref: observedRef, inView } = useInView({
-    threshold: 0.1,
-    onChange: handleSticking,
     skip: !enabled,
+    rootMargin,
+    threshold,
+    onChange: handleSticking,
   })
 
   return {

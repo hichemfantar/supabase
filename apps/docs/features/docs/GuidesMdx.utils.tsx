@@ -23,6 +23,7 @@ const PUBLISHED_SECTIONS = [
   'auth',
   'cli',
   'database',
+  'develop-deploy',
   'functions',
   'getting-started',
   // 'graphql', -- technically published, but completely federated
